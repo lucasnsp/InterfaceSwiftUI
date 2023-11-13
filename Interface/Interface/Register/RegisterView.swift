@@ -60,6 +60,14 @@ struct RegisterView: View {
             }
             .padding(.horizontal, 20)
         }
+        .alert("Something gone wrong", isPresented: $isPresentedAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(errorMessage)
+        }
+        .navigationDestination(isPresented: $goHome) {
+            HomeView()
+        }
     }
     
     var isDisableRegisterButton: Bool {
