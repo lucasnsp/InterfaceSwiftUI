@@ -13,6 +13,7 @@ struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var goRegister: Bool = false
+    @State var goHome: Bool = false
     @State var isPresentedAlert: Bool = false
     @State var errorMessage: String = ""
     
@@ -49,7 +50,7 @@ struct LoginView: View {
                     
                     
                     Button("Login") {
-                        print(#function)
+                        loginUser()
                     }
                     .frame(width: 320, height: 50)
                     .foregroundStyle(.black)
@@ -74,11 +75,21 @@ struct LoginView: View {
             .navigationDestination(isPresented: $goRegister) {
                 RegisterView()
             }
+            .navigationDestination(isPresented: $goHome) {
+                HomeView()
+            }
         }
     }
     
     private func loginUser() {
-        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error {
+                errorMessage = error.localizedDescription
+                isPresentedAlert.toggle()
+            } else {
+                goHome.toggle()
+            }
+        }
     }
     
     var isDisabledLoginButton: Bool {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct RegisterView: View {
     
@@ -13,6 +14,8 @@ struct RegisterView: View {
     @State var password: String = ""
     @State var confirmPassword: String = ""
     @State var goHome: Bool = false
+    @State var isPresentedAlert: Bool = false
+    @State var errorMessage: String = ""
     
     var body: some View {
         ZStack {
@@ -46,7 +49,7 @@ struct RegisterView: View {
                 .textInputAutocapitalization(.never)
                 
                 Button("Register") {
-                    goHome.toggle()
+                    registerUser()
                 }
                 .frame(width: 320, height: 50)
                 .foregroundStyle(.black)
@@ -61,6 +64,22 @@ struct RegisterView: View {
     
     var isDisableRegisterButton: Bool {
         return email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    private func registerUser() {
+        if password == confirmPassword {
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                if let error {
+                    errorMessage = error.localizedDescription
+                    isPresentedAlert.toggle()
+                } else {
+                    goHome.toggle()
+                }
+            }
+        } else {
+            errorMessage = "Check password and confirm password and please try again."
+            isPresentedAlert.toggle()
+        }
     }
 }
 
