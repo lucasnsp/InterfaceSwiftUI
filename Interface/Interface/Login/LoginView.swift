@@ -59,6 +59,7 @@ struct ContentView: View {
                     }
                     .foregroundStyle(.white)
                     .padding(.bottom, 20)
+                    .disabled(isDisabledLoginButton)
                 }
                 .padding(.horizontal, 20)
             }
