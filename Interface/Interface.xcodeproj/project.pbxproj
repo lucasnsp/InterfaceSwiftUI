@@ -41,6 +41,7 @@
 		46E14A812B026AC800519354 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46E14A802B026AC800519354 /* FirebaseStorage */; };
 		46E14A832B026AC800519354 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 46E14A822B026AC800519354 /* FirebaseStorageCombine-Community */; };
 		46E14A862B026AFF00519354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E14A852B026AFF00519354 /* AppDelegate.swift */; };
+		46E14A892B026D1100519354 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E14A882B026D1100519354 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		467A3C2E2B01A99100A674B6 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		46E14A4D2B026A5800519354 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46E14A852B026AFF00519354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46E14A882B026D1100519354 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				46E14A842B026AEC00519354 /* AppDelegate */,
+				46E14A872B026D0100519354 /* Home */,
 				467A3C2C2B01A97A00A674B6 /* Login */,
 				467A3C2D2B01A98100A674B6 /* Register */,
 				467A3C1A2B01905F00A674B6 /* Assets.xcassets */,
@@ -169,6 +172,14 @@
 				46E14A852B026AFF00519354 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		46E14A872B026D0100519354 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				46E14A882B026D1100519354 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				467A3C192B01905E00A674B6 /* LoginView.swift in Sources */,
 				467A3C2F2B01A99100A674B6 /* RegisterView.swift in Sources */,
 				467A3C2B2B01929800A674B6 /* Color+Extension.swift in Sources */,
+				46E14A892B026D1100519354 /* HomeView.swift in Sources */,
 				46E14A862B026AFF00519354 /* AppDelegate.swift in Sources */,
 				467A3C172B01905E00A674B6 /* InterfaceApp.swift in Sources */,
 			);
