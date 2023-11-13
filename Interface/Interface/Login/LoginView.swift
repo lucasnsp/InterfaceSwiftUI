@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     
     @State var email: String = ""
     @State var password: String = ""
